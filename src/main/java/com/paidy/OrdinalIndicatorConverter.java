@@ -16,6 +16,7 @@ public class OrdinalIndicatorConverter {
     if (isSpecialCase(number)) {
       return "th";
     }
+
     int lastDigit = number % 10;
     switch (lastDigit) {
       case 1:

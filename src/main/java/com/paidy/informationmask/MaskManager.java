@@ -15,6 +15,12 @@ public class MaskManager {
     this.masks = Arrays.asList(masks);
   }
 
+  /**
+   * mask the input in a short-circuiting way, only one mask implementation would be applied
+   *
+   * @param input
+   * @return
+   */
   public String execute(String input) {
     for (IMask mask : this.masks) {
       if (mask.isValid(input)) {

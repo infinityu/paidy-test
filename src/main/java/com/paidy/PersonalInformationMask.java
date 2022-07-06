@@ -12,6 +12,11 @@ public class PersonalInformationMask {
 
   private MaskManager maskManager;
 
+  /**
+   * Design based on Open-closed principle.
+   *
+   * <p>delegate the actual mask operation to emailMask and phoneNumberMask
+   */
   public PersonalInformationMask() {
     IMask emailMask = new EmailMask();
     IMask phoneNumberMask = new PhoneNumberMask();

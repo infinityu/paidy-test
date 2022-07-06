@@ -19,12 +19,14 @@ public class SundayCounter {
     LocalDate from = LocalDate.parse(date_from, formatter);
     LocalDate to = LocalDate.parse(date_to, formatter);
 
-
+    // find the first sunday in the month of `date_from`
+    // and locate to the first sunday between `date_from` and `date_to`
     LocalDate sunday = from.with(firstInMonth(DayOfWeek.SUNDAY));
     while (sunday.isBefore(from)) {
       sunday = sunday.plus(Period.ofDays(7));
     }
 
+    // do the counting every 7 days till `date_to` inclusively
     int count = 0;
     while (!sunday.isAfter(to)) {
       count++;

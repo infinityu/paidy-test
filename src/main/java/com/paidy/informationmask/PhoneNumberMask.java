@@ -19,6 +19,8 @@ public class PhoneNumberMask implements IMask {
   @Override
   public boolean isValid(String input) {
     char[] nums = input.toCharArray();
+
+    // as it is required that a phone number consists of at least 9 digits
     int count = 0;
     for (char n : nums) {
       if (Character.isDigit(n)) {
